@@ -5,8 +5,8 @@ This module integrates the Query Agent and Summarization Agent to create
 a multi-agent chatbot that answers legal questions.
 """
 import os
-from legal_chatbot.agents.query_agent import load_index, get_relevant_docs
-from legal_chatbot.agents.summarization_agent import summarize_answer
+from agents.query_agent import load_index, get_relevant_docs
+from agents.summarization_agent import summarize_answer
 from dotenv import load_dotenv
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
 
@@ -32,7 +32,7 @@ def main():
         logger.info("Loading document index...")
         pdf_paths = [
             "data/Guide-to-Litigation-in-India.pdf",
-            "/Users/pasha/chatbotlegal/data/PDFFile5b28c9ce64e524.54675199.pdf"
+            "data/PDFFile5b28c9ce64e524.54675199.pdf"
         ]
         
         # Check if files exist and provide helpful message if not
